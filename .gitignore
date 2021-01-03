@@ -36,6 +36,6 @@ yarn-error.log*
 #api
 /api/node_modules
 /api/public
-.quasar.env.json
+# .quasar.env.json
 .vscode/
 api/

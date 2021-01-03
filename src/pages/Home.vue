@@ -904,74 +904,6 @@ export default {
         details,
         c
       );
-      if (c == 'counselor') {
-        // this.reports = [];
-        console.log('searchTermC ', this.searchTermC);
-
-        // if (this.searchTermC && this.searchTermC.length > 0) {
-        //   console.log('searchTerm length greater than zero');
-        //   this.reports = this.allReports;
-        //   //   this.searchTermArray = this.searchTermC;
-        //   this.searchTermTl = null;
-        //   this.searchTermSm = null;
-        //   this.searchTermA = null;
-        // }
-
-        // this.filterByCounsellor();
-      }
-      if (c == 'teamLead') {
-        // if (!this.searchedByCounselor.length) {
-        //   console.log(
-        //     'searchedByCounselor length is zero',
-        //     this.searchedByCounselor
-        //   );
-        //   this.reports = this.allReports;
-        // }
-        //  this.reports = [];
-        // this.searchTermArray = _.union(this.searchTermArray, [
-        //   { [c]: details.value },
-        // ]);
-        // this.filterByTeamLead();
-      }
-
-      if (c == 'seniorManager') {
-        // if (
-        //   !this.searchedByCounselor.length &&
-        //   !this.searchedByTeamLead.length
-        // ) {
-        //   this.reports = this.allReports;
-        // } else if (!this.searchedByCounselor.length) {
-        //   this.reports = this.allReports;
-        // } else if (!this.searchedByTeamLead.length) {
-        //   this.reports = this.searchedByCounselor;
-        // }
-        //  this.reports = [];
-        // this.searchTermArray = _.union(this.searchTermArray, [
-        //   { [c]: details.value },
-        // ]);
-        // this.filterBySeniorManager();
-      }
-
-      if (c == 'auditor') {
-        // if (
-        //   !this.searchedByCounselor.length &&
-        //   !this.searchedByTeamLead.length &&
-        //   !this.searchedBySeniorManager.length
-        // ) {
-        //   this.reports = this.allReports;
-        // } else if (!this.searchedByCounselor.length) {
-        //   this.reports = this.allReports;
-        // } else if (!this.searchedByTeamLead.length) {
-        //   this.reports = this.searchedByCounselor;
-        // } else if (!this.searchedBySeniorManager.length) {
-        //   this.reports = this.searchedByTeamLead;
-        // }
-        //  this.reports = [];
-        // this.searchTermArray = _.union(this.searchTermArray, [
-        //   { [c]: details.value },
-        // ]);
-        // this.filterByAuditor();
-      }
     },
 
     removeFromSearchTerm(details, c) {
@@ -1170,149 +1102,6 @@ export default {
         // console.log('report counselor', this.reports[0].teamLead);
       });
     },
-
-    // getReports(month) {
-    //   //   month = month + 1;
-    //   this.reports = [];
-    //   this.allReports = [];
-    //   const yesterMonth = new Date();
-    //   yesterMonth.setMonth(month - 1);
-    //   yesterMonth.setDate(1);
-    //   const nextMonth = new Date();
-    //   nextMonth.setMonth(month + 1);
-    //   nextMonth.setDate(1);
-
-    //   if (month !== new Date().getMonth()) {
-    //   }
-
-    //   if (
-    //     this.permissions.includes('viewAll') ||
-    //     this.permissions.includes('admin')
-    //   ) {
-    //     this.$axios.this.$firestore
-    //       .collection('reports')
-    //       //   .where(this.role, '==', this.name)
-    //       .orderBy('createdAt', 'desc')
-    //       .where('createdAt', '>', yesterMonth)
-    //       .where('createdAt', '<', nextMonth)
-    //       //   .where('createdAt', '>', yesterMonth)
-    //       // .limit(10)
-    //       .onSnapshot(querySnapshot => {
-    //         this.allReports = [];
-    //         this.reports = [];
-    //         querySnapshot.forEach(doc => {
-    //           this.allReports = _.union(this.allReports, [
-    //             { ...doc.data(), id: doc.id },
-    //           ]);
-    //           // console.log('data ', doc.data());
-    //         });
-    //         this.reports = _.union(this.reports, this.allReports);
-    //       });
-    //   } else {
-    //     if (this.permissions.includes('viewMy')) {
-    //       //   console.log('doc data in viewAll else ', doc.data());
-    //       //   console.log('this.role ', this.role);
-    //       //   console.log('this.name ', this.name);
-    //       //   const role = this.role
-    //       //     .toLowerCase()
-    //       //     .replace(/[^a-zA-Z0-9]+(.)/g, (match, chr) => {
-    //       //       return chr.toUpperCase();
-    //       //     }); //convert role seperated wiht space into a camel cased string
-
-    //       //   console.log('role ', role);
-
-    //       //   if (doc.data().counsellor == this.name) {
-    //       //     this.allReports.push({ ...doc.data(), id: doc.id });
-    //       // console.log('data ', doc.data());
-
-    //       this.$firestore
-    //         .collection('reports')
-    //         //   .where(this.role, '==', this.name)
-    //         .orderBy('createdAt', 'desc')
-    //         .where(this.role, '==', this.name)
-    //         .where('createdAt', '>', yesterMonth)
-    //         .where('createdAt', '<', nextMonth)
-    //         //   .where('teamLead', '==', this.name)
-    //         //   .limit(10)
-    //         .onSnapshot(querySnapshot => {
-    //           this.allReports = [];
-    //           this.reports = [];
-    //           querySnapshot.forEach(doc => {
-    //             // const report = { ...doc.data(), id: doc.id };
-    //             // this.allReports.indexOf(report === -1) &&
-    //             //   this.allReports.push(report);
-
-    //             this.allReports = _.union(this.allReports, [
-    //               { ...doc.data(), id: doc.id },
-    //             ]);
-
-    //             // this.reports = this.allReports;
-    //           });
-    //           this.reports = _.union(this.reports, this.allReports);
-    //         });
-    //     }
-
-    //     if (this.permissions.includes('viewTl')) {
-    //       //   if (doc.data().teamLead == this.name) {
-    //       //     this.allReports.push({ ...doc.data(), id: doc.id });
-    //       //     console.log('data ', doc.data());
-
-    //       this.$firestore
-    //         .collection('reports')
-    //         //   .where(this.role, '==', this.name)
-    //         .orderBy('createdAt', 'desc')
-    //         .where('teamLead', '==', this.name)
-    //         .where('createdAt', '>', yesterMonth)
-    //         .where('createdAt', '<', nextMonth)
-    //         //   .limit(10)
-    //         .onSnapshot(querySnapshot => {
-    //           this.allReports = [];
-
-    //           querySnapshot.forEach(doc => {
-    //             // const report = { ...doc.data(), id: doc.id };
-    //             // this.allReports.indexOf(report === -1) &&
-    //             //   this.allReports.push(report);
-
-    //             this.allReports = _.union(this.allReports, [
-    //               { ...doc.data(), id: doc.id },
-    //             ]);
-
-    //             // this.reports = this.allReports;
-    //           });
-    //           this.reports = _.union(this.reports, this.allReports);
-    //         });
-    //     }
-
-    //     if (this.permissions.includes('viewSm')) {
-    //       //   if (doc.data().seniorManager == this.name) {
-    //       //     this.allReports.push({ ...doc.data(), id: doc.id });
-    //       //     console.log('data ', doc.data());
-    //       this.$firestore
-    //         .collection('reports')
-    //         //   .where(this.role, '==', this.name)
-    //         .orderBy('createdAt', 'desc')
-    //         .where('seniorManager', '==', this.name)
-    //         .where('createdAt', '>', yesterMonth)
-    //         .where('createdAt', '<', nextMonth)
-    //         //   .limit(10)
-    //         .onSnapshot(querySnapshot => {
-    //           this.allReports = [];
-
-    //           querySnapshot.forEach(doc => {
-    //             // const report = { ...doc.data(), id: doc.id };
-    //             // this.allReports.indexOf(report === -1) &&
-    //             //   this.allReports.push(report);
-
-    //             this.allReports = _.union(this.allReports, [
-    //               { ...doc.data(), id: doc.id },
-    //             ]);
-    //           });
-    //           //   this.reports = this.allReports;
-    //           this.reports = _.union(this.reports, this.allReports);
-    //         });
-    //     }
-    //   }
-    // },
   },
 
   watch: {
@@ -1355,6 +1144,32 @@ export default {
 
   mounted() {
     this.allReports = [];
+
+    this.months = [];
+    const monthsArray = [
+      'January',
+      'Febuary',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
+    for (let i = 0; i < 6; i++) {
+      const now = new Date();
+
+      now.setMonth(now.getMonth() - i);
+      this.months.push({
+        label: `${monthsArray[now.getMonth()]} ${now.getFullYear()}`,
+        value: now.getMonth(),
+      });
+    }
+    this.month = this.months[0];
 
     this.populateFilterData();
 
